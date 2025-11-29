@@ -20,10 +20,10 @@ st.markdown("Analyze sales performance, **inventory levels,** and supplier relia
 # We cache data loading so the app doesn’t reload files on every UI change.
 @st.cache_data
 def load_data():
-    sales = pd.read_csv("data/sales.csv")
-    products = pd.read_csv("data/products.csv")
-    inventory = pd.read_csv("data/inventory.csv")
-    suppliers = pd.read_csv("data/suppliers.csv")
+    sales = pd.read_csv("Data/sales.csv")
+    products = pd.read_csv("Data/products.csv")
+    inventory = pd.read_csv("Data/inventory.csv")
+    suppliers = pd.read_csv("Data/suppliers.csv")
 
     return sales, products, inventory, suppliers
 
@@ -238,4 +238,5 @@ expiring_soon_df = filtered[
    
 ][["medicine", "category", "expiry_date", "supplier_name", "branch"]]
 st.write("### ⚠️ Expiring Soon (Next 30 Days)") # https://emojicombos.com/warning
+
 st.dataframe(expiring_soon_df, use_container_width=True)
